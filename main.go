@@ -18,13 +18,13 @@ func main() {
 	ll := log.New(os.Stdout, "product-api", log.LstdFlags)
 
 	// Create the handlers
-	hh := handlers.NewHello(ll)
+	// hh := handlers.NewHello(ll)
 	gh := handlers.NewGoodbuy(ll)
 	ph := handlers.NewProducts(ll)
 
 	// Create a new server mux and register a handlers
 	sm := http.NewServeMux()
-	sm.Handle("/", hh)
+	sm.Handle("/", ph)
 	sm.Handle("/goodbuy", gh)
 	sm.Handle("/products", ph)
 
